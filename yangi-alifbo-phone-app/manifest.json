@@ -1,0 +1,10 @@
+{
+  "name": "YangiAlifbo — O‘zbekcha imlo yordamchisi",
+  "short_name": "YangiAlifbo",
+  "description": "O‘zbekcha matnni tekshirish va yangi alifboga o‘girish",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f3f6fc",
+  "theme_color": "#3157d5",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
