@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3157d5">
+<meta name="description" content="O‘zbekcha imlo va yangi alifbo yordamchisi">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>YangiAlifbo</title>
+</head>
+<body>
+<main class="app">
+<header class="top"><div class="logo">A<span>✦</span></div><div><h1>YangiAlifbo</h1><p>To‘g‘ri imlo — yangi alifbo bilan</p></div></header>
+<section class="panel">
+<label for="inputText">Matningiz</label>
+<textarea id="inputText" maxlength="20000" placeholder="Masalan: Men bugun oqituvchi bilan gaplashdim..."></textarea>
+<div class="counter"><span id="count">0</span>/20000</div>
+<div class="options">
+<label class="check"><input type="checkbox" id="spellcheck" checked> Imlo xatolarini tuzatish</label>
+<label class="check"><input type="checkbox" id="convert" checked> Yangi alifboga o‘girish</label>
+</div>
+<button id="convertBtn" class="primary">✦ Matnni tekshirish</button>
+<p class="hint">Alifbo o‘girish qurilmada bajariladi. To‘liq imlo tekshiruvi uchun internet va API serveri kerak.</p>
+</section>
+<section id="resultPanel" class="panel result hidden">
+<div class="result-heading"><h2>Natija</h2><span id="status" class="pill">Tayyor</span></div>
+<label for="resultText">Yangi alifbodagi matn</label>
+<textarea id="resultText" readonly placeholder="Natija shu yerda ko‘rinadi"></textarea>
+<div class="actions"><button id="copyBtn" class="primary">▢ Nusxalash</button><button id="shareBtn" class="secondary">↗ Ulashish</button></div>
+<details><summary>Tuzatilgan oddiy imloni ko‘rish</summary><textarea id="standardText" readonly></textarea></details>
+</section>
+<section class="panel rules">
+<h2>Alifbo qoidalari</h2>
+<div class="rule"><b>o‘</b><span>→</span><b>ö</b></div>
+<div class="rule"><b>g‘</b><span>→</span><b>ğ</b></div>
+<div class="rule"><b>sh</b><span>→</span><b>ş</b></div>
+<div class="rule"><b>ch</b><span>→</span><b>ç</b></div>
+<p class="hint">Bu ilova siz belgilagan maxsus alifbo qoidalaridan foydalanadi.</p>
+</section>
+<footer>YangiAlifbo · Dastlabki mobil versiya</footer>
+</main>
+<nav class="bottom-nav"><span class="active">⌂<small>Bosh sahifa</small></span><span id="historyNav">◷<small>Tarix</small></span><span id="settingsNav">⚙<small>Sozlamalar</small></span></nav>
+<dialog id="settingsDialog"><form method="dialog" class="dialog-inner"><h2>Sozlamalar</h2><label for="apiUrl">Imlo tekshirish API manzili (ixtiyoriy)</label><input id="apiUrl" type="url" placeholder="https://serveringiz.uz/api/convert"><p class="hint">API manzili berilmasa, ilova asosiy konvertatsiyani o‘zi bajaradi. Server matningizni tashqi xizmatga yuborishi mumkin.</p><button id="saveSettings" class="primary">Saqlash</button><button class="secondary">Yopish</button></form></dialog>
+<dialog id="historyDialog"><form method="dialog" class="dialog-inner"><h2>Oxirgi natijalar</h2><div id="historyList" class="history-list">Hozircha tarix bo‘sh.</div><button class="secondary">Yopish</button></form></dialog>
+<script src="app.js"></script>
+</body></html>
